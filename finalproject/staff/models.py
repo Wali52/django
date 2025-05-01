@@ -16,5 +16,5 @@ class StaffModel(models.Model):
     role = models.CharField(max_length=20,choices=role_choices)
     contact_info = models.CharField(max_length=15)
 
-    def __self__(self):
-        return self.name
+    def __str__(self):
+        return f"{self.name} (ID: {self.id})"

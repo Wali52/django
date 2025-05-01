@@ -35,7 +35,14 @@ class PatientModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Mr.{self.name} (ID: {self.id})"
+        if self.gender == "Male":
+            title = "Mr."
+        elif self.gender == "Female":
+            title = "Ms."
+        else:
+            title = ""
+        return f"{title}{self.name} (ID: {self.id})"
+
     
 
 

@@ -5,7 +5,7 @@ class DepartmentModel(models.Model):
     name = models.CharField(max_length=100,unique=True)
 
     def __str__(self):
-        return self.name
+        return  f" {self.name}  {self.pk})"
 
 
 class DoctorModel(models.Model):
@@ -45,4 +45,4 @@ class DoctorModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Dr. {self.first_name} {self.last_name} ({self.specialization})"
+        return f"Dr. {self.first_name} {self.last_name} ({self.specialization} {self.pk})"
